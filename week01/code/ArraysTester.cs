@@ -38,8 +38,19 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Solution: First create a double array, than make a double variable to store the first number.
+        // Using a for loop, create a variable i, for iteration, to compare with the length integer
+        // once the i variable is equal to the length integer the loop should stop.
+        // in every loop, the number variable should be added to the current number variable value AFTER the current
+        // value is added to the list.
+        double[] multiples = new double[length];
+        double num = number;
+        for (int i = 0; i < length; i++){
+            multiples[i] = num;
+            num = num + number;
+        }
 
-        return new double[0]; // replace this return statement with your own
+        return multiples; // replace this return statement with your own
     }
     
     /// <summary>
@@ -56,6 +67,21 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Solution: To clarify this solution will use the GetRange method, using the negative count. It will
+        // create a new list, and then it can add to the list every number using a loop, until it reaches the number that is
+        // now located in index[0]
+        // First, find the first number of the new list and set it as a variable
+        int startNum = data.Count + 1 - amount;
+
+        //second, begin loop so that it loops the whole list lenght
+        for (var i = 0; i < data.Count; i++){
+            // third, replace the number on the first index with the new first number
+            data[i] = startNum;
+            // add 1 to that number until it reaches the last number, than start back at 1
+            if (startNum < data[data.Count - 1])
+            startNum++;
+            else startNum = 1;
+        }
 
     }
 }
